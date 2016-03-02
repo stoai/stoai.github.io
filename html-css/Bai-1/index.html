@@ -1,17 +1,17 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>EXERCISE-1</title>
+		<title>Player</title>
 		<link rel="stylesheet" href="css/style.css" type="text/css" />
 	</head>
 
 	<body>
 		<div id="wrapper">
-
-			<div id="header">
-				<div id="title">
+			<div id="title">
 					<strong>Player Profile</strong>
-				</div><!-- End of title -->
+			</div><!-- End of title -->
+			<div id="header">
+				
 
 				<div id="header-left">
 					<img src="images/avatar.gif" alt="avatar" title="Avatar Account" />			
@@ -21,7 +21,7 @@
 					<span>Ten: Nguyen Xuan Nam</span><br />
 					<span>Noi sinh: Ha noi</span><br />
 					<span>Ngay sinh: 28/11/1990</span><br />
-					<span>vi tri: Teamlear</span><br />
+					<span>Vi tri: Teamlear</span><br />
 					<span>Cao: 170cm</span><br />
 					<span>Nang: 65kg</span>
 				</div><!-- End of header-right -->
@@ -30,8 +30,8 @@
 
 			<div id="content">
 				<div id="info">
-					<h4>Facts:</h4>
-					<ul>
+					<h4 id="facts">Facts:</h4>
+					<ul id="details">
 						<li><img src="images/star.gif" alt="Star" title="" />Nam gia nhap The Cong nam 1999 </li>
 						<li><img src="images/star.gif" alt="Star" title="" />Trong suot thoi trai tre gia nhap The cong Nam da ghi 							     duoc 160 ban thang trong vong 7 nam</li>
 						<li><img src="images/star.gif" alt="Star" title="" />Nam choi tran dau tien cho U21 Viet Nam vao do tuoi 16</li>
@@ -40,13 +40,44 @@
 					</ul>
 				</div><!-- End of info -->
 
-				<div class="comment">
-					Nam choi bong cho clb the cong
-				</div><!-- End of comment -->
+				<div id="comment">
+					<div class="comment-details">
+						<span>Nam choi bong cho clb the cong</span><br />
+						<span>The cong dat cup vo dich</span>
+					</div><!-- End of comment -->
+				<div class="post">
+						<img src="images/comment_bt.gif" alt="" title="" />
+						<span>Posted by <a href="#">The cong's Fan </a>20/12/2007.</span>					
+				</div><!-- End of post -->
+
+					<div class="comment-details">
+						<span>Nam la cau thu choi rat hay o The Cong</span><br />
+						<span>Va anh ta da chuyen toi Hoa phat &lt;&gt;:)</span>
+					</div><!-- End of comment -->
+				<div class="post">
+						<img src="images/comment_bt.gif" alt="" title="" />
+						<span>Posted by <a href="#">Hoa phat's Fan </a>20/12/2007.</span>					
+				</div><!-- End of post -->
 
 			</div><!-- End of content -->
 			<div id="footer">
-				Your comment
+				<h3>Your Comment</h3>
+				<form id="form">
+					<table>
+						<tr>
+							<td><p>Your name</p></td>
+							<td class="space"><input type="text" /></td>
+						</tr>
+						<tr>
+							<td><p>Your email(will not public)</p></td>
+							<td class="space"><input type="email" /></td>
+						</tr>
+						<tr>
+							<td><p>Comment</p></td>
+							<td class="space"><textarea rows="5" placeholder="Your comment here"></textarea></td>
+						</tr>
+					</table>
+				</form><!-- End of form -->
 			</div><!-- End of footer -->
 
 		</div><!-- End of wrapper -->
