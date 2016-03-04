@@ -1,0 +1,144 @@
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	background-color: black;
+	font-size: 14px;
+	color: white;
+}
+
+#wrapper {
+	max-width: 1265px;
+	height: 940px;
+	margin: 0 auto;
+	background-color: #2E2F34;
+}
+/*******CSS for header*******/
+#wrapper #header {
+	width: 100%;
+	min-height: 107px;
+	background-color: #2D2F35;
+}
+
+#wrapper #header img {
+	width: 257px;
+	height: 90px;
+}
+
+/*******CSS for intro*******/
+#wrapper #intro {
+	width: 100%;
+	height: 300px;
+	background-color: #2D2F35;
+	border-top: 1px solid #474A51;
+	background: url(../images/bg_home_intro.gif);
+}
+
+#wrapper #intro #intro-image {
+	width: 650px;
+	height:inherit;
+	float: right;
+}
+
+#wrapper #intro .intro-text {
+	width: 485px;
+	height: inherit;	
+	padding-left: 125px;
+	float: left;
+}
+
+#wrapper #intro .intro-text h2{
+	color: #DEDE19;
+	padding-bottom: 10px;
+}
+
+#wrapper #intro .intro-text p {
+	padding-bottom: 37px;
+}
+
+/*******CSS for slide*******/
+#wrapper #slide {
+	box-sizing: border-box;
+	width: 100%;
+	height: 140px;
+	clear: both;
+	padding-left: 120px;
+	border-top: 1px solid #474A51;
+}
+
+#wrapper #slide ul {
+	box-sizing: border-box;
+	width: inherit;
+	height: inherit;
+	float: left;
+	list-style: none;		
+}
+
+#wrapper #slide ul li {
+	display: inline;
+}
+
+#wrapper #slide ul li img {
+	float: left;
+	margin-left: 15px;
+	margin-top: 10px;
+}
+
+#wrapper #slide ul li div.item {
+	position: absolute;
+	top: -10px;
+	right: -10px
+}
+
+#wrapper #slide ul li img.number {
+	
+}
+
+/*******CSS for content*******/
+#wrapper #content {
+	color: white;
+	width: 100%;
+	height: 380px;
+	border-top: 1px solid #474A51;
+	border-bottom: 1px solid #474A51;
+}
+
+#wrapper #content #content-left {
+	width: 400px;
+	height: 290px;
+	float: left;
+	padding-left: 125px;
+	background: url(../images/home_services_bg_design.gif) no-repeat;
+	background-position: 350px 150px;
+}
+#wrapper #content #content-left h3 {
+	color: #ffff00;
+}
+
+#wrapper #content #content-right {
+	width: 400px;
+	height: 290px;
+	float: right;
+	padding-right: 125px;
+	background: url(../images/home_services_bg_marketing.gif) no-repeat;
+	background-position: 5px 15px;
+}
+
+#wrapper #content #content-right h3 {
+	color: #ffff00;
+}
+
+#wrapper #content #content-right p {
+	padding-top: 50px;
+}
+/*******CSS for footer*******/
+#wrapper #footer {
+	width: 100%;
+	height: 119px;
+	clear: both;
+	margin-bottom: 10px;
+	background: url(../images/bg_footer.gif) repeat-x;
+    background-position: left right;
+}
+
+#wrapper #footer p {
+	text-align: center;
+}
