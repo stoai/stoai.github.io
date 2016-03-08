@@ -67,12 +67,10 @@ body {
 	clear: both;
 	padding-left: 120px;
 	border-top: 1px solid #474A51;
-	border: 1px solid red;
 }
 
 #wrapper #slide ul {
 	list-style: none;
-	border: 1px solid white;
 	margin-right: 20px;		
 }
 
@@ -103,7 +101,6 @@ body {
 	margin-left: 125px;
 	background: url(../images/home_services_bg_design.gif) no-repeat;
 	background-position: 250px 170px;
-	border: 1px solid red;
 }
 #wrapper #content #content-left span {
 	color: #ffff00;
@@ -122,7 +119,6 @@ body {
 	margin-right: 125px;
 	background: url(../images/home_services_bg_marketing.gif) no-repeat;
 	background-position: 5px 10px;
-	border: 1px solid green;
 }
 
 #wrapper #content #content-right span {
