@@ -21,7 +21,7 @@ body {
 	margin-left: 60px;
 }
 
-#wrapper #header #logo img{
+#wrapper #header #logo img {
 	float: left;
 	margin: 40px 6px 10px 10px;
 	
@@ -41,7 +41,7 @@ body {
 }
 
 /******* CSS for nav-main *******/
-#wrapper #header #nav-main{
+#wrapper #header #nav-main {
 	font-weight: bold;
 	color: #fff;	
 }
@@ -50,7 +50,7 @@ body {
 	margin: 60px 0px 0px 35px;
 }
 
-#wrapper #header #nav-main ul li{
+#wrapper #header #nav-main ul li {
 	width: 779px;
 	display: inline;
 	margin-left: 2px;	
@@ -60,7 +60,7 @@ body {
 	margin: 0px 0px 0px 90px;
 }
 
-#wrapper #header #nav-main ul.text li.space{
+#wrapper #header #nav-main ul.text li.space {
 	margin-left: 96px;
 }
 
@@ -112,7 +112,7 @@ body {
 	font-size: 13px;
 }
 
-#wrapper #content #content-bottom img{
+#wrapper #content #content-bottom img {
 	margin-top: 40px;
 }
 
