@@ -21,6 +21,7 @@ function checkUsername() {
 	} else {
 		flagUsername = true;
 		check_username.innerHTML = "";
+		username.style.background = "#FFF";
 	}
 }
 
@@ -39,10 +40,11 @@ function checkPassword() {
 	} else if (!checkLength(password.value)) {
 			check_password.innerHTML = "*Password length min 8 letter.";
 	} else if (checkValidate(password.value)) {
-		check_password.innerHTML = "*Password wrong format."
+		check_password.innerHTML = "*Password wrong format.(At least one special characters)"
 	} else {
 		flagPassword = true;
 		check_password.innerHTML = "";
+		password.style.background = "#FFF";
 	}
 }
 
@@ -58,10 +60,11 @@ function checkEmail() {
 		email.style.background = "#FDEDEC";
 		check_email.innerHTML = "*Email not empty!"
 	} else if (!checkValidateEmail(email.value)) {
-		check_email.innerHTML = "*Email wrong format";
+		check_email.innerHTML = "*Email wrong format.(example: nopainnogain@gmail.com)";
 	} else {
 		flagEmail = true;
 		check_email.innerHTML = "";
+		email.style.background = "#FFF";
 	}
 }
 
@@ -78,6 +81,7 @@ function checkBirthday() {
 	} else {
 		flagBirthday = true;
 		check_birthday.innerHTML = "";
+		birthday.style.background = "lightgrey";
 	}
 }
 
@@ -114,7 +118,7 @@ function checkLength(text) {
 }
 
 /**
-*The checkValidate() function is check valid input text(ex:includes special digits).
+*The checkValidate() function is check valid input text(ex: at least one special characters).
 *
 */
 
@@ -129,9 +133,12 @@ function checkValidate(text) {
 */
 function submitAjax() {
 	if ((flagUsername && flagPassword) && (flagEmail && flagBirthday)) {
-		console.log("hey");
+		console.log("flagUsername: " + flagUsername);
+		console.log("flagPassword: " + flagPassword);
+		console.log("flagEmail: " + flagEmail);
+		console.log("flagBirthday: " + flagBirthday);
 		callAjax("test.php");
-		
+		console.log("DONE!");
 	}
 }
 
@@ -140,15 +147,15 @@ function submitAjax() {
 *
 */
 function callAjax(url) {
-	/*httpRequest = new XMLHttpRequest();
+	httpRequest = new XMLHttpRequest();
 	if (!httpRequest) {
 		window.alert("Can't initiate XMLHttpRequest");
 		return false;
 	}
-	//url += "?username" + document.getElementById("username").value;
 	httpRequest.open("GET", url, true);
 	httpRequest.onreadystatechange = notify;
-	httpRequest.send(null);*/
+	httpRequest.send(null);
+	console.log("Works!");
 }
 /**
 *The notify() fucntion is a "callback". It's work after request success.
@@ -156,15 +163,13 @@ function callAjax(url) {
 */
 function notify() {
 
-	/*if (httpRequest.readyState == 4 && httpRequest.status == 200) { // value 'status' equal 200 means request successfully.
+	if (httpRequest.readyState == 4 && httpRequest.status == 200) { // value 'status' equal 200 means request successfully.
 		var result = document.getElementById("result");
+		console.log("responseText=" + httpRequest.responseText);
 		if (httpRequest.responseText == "true") {
 			result.innerHTML = "*Username is exist! Please enter another username.";
-			result.style.color = "#E74C3C";
 		} else {
-			results.innerHTML = "Created successfully!";
-			results.style.color = "#1ABC9C";
+			result.innerHTML = "Created successfully!";
 		}
 	}
-	window.alert("Error request:" + httpRequest.status);*/
 }
