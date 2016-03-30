@@ -1,0 +1,39 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+form {
+	width: 790px;
+	padding: 5px;
+	margin: 5px;
+}
+
+.category{
+	padding: 5px;
+}
+
+.category input {
+	box-shadow: 2px 2px 2px lightgrey, 0 0 5px lightgrey, 0 0 10px lightgrey;
+}
+
+#button {
+	padding-left: 100px;
+	padding-top: 30px;
+}
+
+#button button {
+	text-align: center;
+	color: #2E86C1;
+}
+
+#check-username, #check-password, #check-email, #check-birthday {
+	color: red;
+	font-size: 13px;
+}
+
+#result {
+	color: orange;
+	font-size: 30px;
+}
+

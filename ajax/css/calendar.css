@@ -1,0 +1,36 @@
+body {
+	width: 500px;
+	height: auto;
+	margin: 0 auto;
+}
+
+/**
+* Set position for calendar image.
+*/
+a img {
+	width: 40px;
+	height: 40px;
+	margin-left: -30px;
+	margin-bottom: -10px;
+}
+
+#main table {
+	border-collapse: collapse;	
+}
+
+#main table tr td {
+	text-align: center;
+}
+
+td:hover {
+	background: lightgrey;
+}
+
+#main table tr th {
+	background: orange;
+}
+
+select#selected_month {
+	width: 100%;
+	text-align: center;
+}
