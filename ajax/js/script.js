@@ -39,8 +39,8 @@ function checkPassword() {
 		check_password.innerHTML = "*Password not empty!"
 	} else if (!checkLength(password.value)) {
 			check_password.innerHTML = "*Password length min 8 letter.";
-	} else if (checkValidate(password.value)) {
-		check_password.innerHTML = "*Password wrong format.(At least one special characters)"
+	} else if (!checkValidate(password.value)) {
+		check_password.innerHTML = "*Password wrong format."
 	} else {
 		flagPassword = true;
 		check_password.innerHTML = "";
@@ -60,7 +60,7 @@ function checkEmail() {
 		email.style.background = "#FDEDEC";
 		check_email.innerHTML = "*Email not empty!"
 	} else if (!checkValidateEmail(email.value)) {
-		check_email.innerHTML = "*Email wrong format.(example: nopainnogain@gmail.com)";
+		check_email.innerHTML = "*Email wrong format (Example: nopainnogain@gmail.com)";
 	} else {
 		flagEmail = true;
 		check_email.innerHTML = "";
@@ -121,7 +121,6 @@ function checkLength(text) {
 *The checkValidate() function is check valid input text(ex: at least one special characters).
 *
 */
-
 function checkValidate(text) {
 	var regex = /^([0-9a-zA-Z])+$/;
 	return regex.test(text);
@@ -157,12 +156,12 @@ function callAjax(url) {
 	httpRequest.send(null);
 	console.log("Works!");
 }
+
 /**
 *The notify() fucntion is a "callback". It's work after request success.
 *
 */
 function notify() {
-
 	if (httpRequest.readyState == 4 && httpRequest.status == 200) { // value 'status' equal 200 means request successfully.
 		var result = document.getElementById("result");
 		console.log("responseText=" + httpRequest.responseText);
