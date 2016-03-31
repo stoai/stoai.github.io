@@ -4,39 +4,30 @@
 }
 
 #slider {
-	margin-top: 10px !important;
-	margin: auto;
+	margin: 0 auto;
 	height: 379px;
 	width: 960px;
-	background: #272727;
 	position: relative;
 	border: solid 3px black;
+	background: black;
 }
 
 
 #slider #prev-slide, #next-slide {
-	position: absolute;
 	height: 35px;
 	width: 35px;
 }
 
-
-#slider #prev-slide:hover {
-	background: url("../images/left-arrow-hover.png") no-repeat center;
-}
- 
-#slider #next-slide:hover {
-	background: url("../images/right-arrow-hover.png") no-repeat center;
+#slider img#prev-slide {
+	margin-top: -235px;
+	margin-left: -29px;
+	float: left;
 }
 
-
-#slider #prev-slide {
-	background: url("../images/left-arrow5.png") no-repeat center;
-}
-
-#slider #next-slide {
-	right: 0px;
-	background: url("../images/right-arrow5.png") no-repeat center;
+#slider img#next-slide {
+	margin-top: -235px;
+	margin-right: -29px;
+	float: right;
 }
 
 #slider #prev-slide img {
@@ -61,7 +52,7 @@ ul.slide-box {
 	width:960px;
 	height:360px;
 }
-ul.slide-box>li {
+ul.slide-box > li {
 	display: none;
 	width: 100%;
 	height:100%;
@@ -85,11 +76,11 @@ ul.index-menu {
 	list-style-type: none;
 }
 
-ul.index-menu>li.track {
+ul.index-menu > li.track {
 	cursor: pointer;
 	display: inline-block;
+	border-radius: 50%;
 	width: 10px;
 	height: 10px;
 	background: green;
-	border-radius: 50%;
 }

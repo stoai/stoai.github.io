@@ -4,7 +4,6 @@
 		<title>Slider</title>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="css/style.css" type="text/css" />
-		<script type="text/javascript" src="js/script.js"></script>
 	</head>
 	<body>
 		<div id="slider">
@@ -19,22 +18,22 @@
 				<li id="item7"><img src="images/image7.jpg"  alt="" title="" /></li>
 			</ul>
 			
-			<img src="images/prev.png" id="prev-slide" alt="" title="" onclick="prevAction();" />
-			<img src="images/next.png" id="next-slide" alt="" title="" onclick="nextAction();" />
+			<img src="images/prev.png" id="prev-slide" alt="" title="" onclick="prevImage();" />
+			<img src="images/next.png" id="next-slide" alt="" title="" onclick="nextImage();" />
 			
 			<div class="index">
 				<ul class="index-menu">
-					<li id="index1" class="track" onClick='onClickIndex(this);'></li>
-					<li id="index2" class="track" onClick='onClickIndex(this);'></li>
-					<li id="index3" class="track" onClick='onClickIndex(this);'></li>
-					<li id="index4" class="track" onClick='onClickIndex(this);'></li>
-					<li id="index5" class="track" onClick='onClickIndex(this);'></li>
-					<li id="index6" class="track" onClick='onClickIndex(this);'></li>
-					<li id="index7" class="track" onClick='onClickIndex(this);'></li>
+					<li id="index1" class="track" onClick='onTrack(this);'></li>
+					<li id="index2" class="track" onClick='onTrack(this);'></li>
+					<li id="index3" class="track" onClick='onTrack(this);'></li>
+					<li id="index4" class="track" onClick='onTrack(this);'></li>
+					<li id="index5" class="track" onClick='onTrack(this);'></li>
+					<li id="index6" class="track" onClick='onTrack(this);'></li>
+					<li id="index7" class="track" onClick='onTrack(this);'></li>
 				</ul>
 			</div><!--End of .index -->
 			
 		</div><!--End of #slider -->
-		<script type="text/javascript">setInterval(nextAction,3000);</script>
+		<script type="text/javascript" src="js/script.js"></script>
 	</body>
 </html>
