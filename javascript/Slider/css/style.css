@@ -2,7 +2,7 @@
 	margin:0;
 	padding: 0;
 }
-
+/********************CSS for #slider  ********************/
 #slider {
 	margin: 0 auto;
 	height: 379px;
@@ -11,76 +11,72 @@
 	border: solid 3px black;
 	background: black;
 }
-
+/********************CSS for #prev-slide and #next-slide  ********************/
 
 #slider #prev-slide, #next-slide {
 	height: 35px;
 	width: 35px;
 }
 
+/********************CSS details for button(image) previous image********************/
 #slider img#prev-slide {
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
 	margin-top: -235px;
 	margin-left: -29px;
 	float: left;
 }
 
+/********************CSS details for button(image) next image********************/
 #slider img#next-slide {
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
 	margin-top: -235px;
 	margin-right: -29px;
 	float: right;
 }
 
-#slider #prev-slide img {
-	width: 35px;
-	height: 35px;
-	cursor: pointer;
-}
-
-#slider #next-slide img {
-	width: 35px;
-	height: 35px;
-	cursor: pointer;
-}
-
-ul.slide-box {
-	list-style-type: none;
-	width: 100%;
-	height:100%;
-}
-
-.slide-box img {
+/********************CSS for images inside .slide-box  ********************/
+.slide-box li img {
 	width:960px;
 	height:360px;
 }
+
+/********************CSS for tag <li> hold images  ********************/
 ul.slide-box > li {
 	display: none;
-	width: 100%;
-	height:100%;
 }
 
-#item1 {
+/********************CSS set image1 first display********************/
+li#image1 {
 	display: block;
 }
-#index1 {
+
+/********************CSS set index1 first tracked (red)********************/
+li#index1 {
 	background: red;
 }
 
-.index {
+/********************CSS for #index  ********************/
+#index {
 	position: absolute;
-	text-align: center;
 	top:360px;
 	left: 435px;
 }
 
-ul.index-menu {
+/********************CSS for #index-menu********************/
+ul#index-menu {
 	list-style-type: none;
 }
 
+/********************CSS for tracks********************/
 ul.index-menu > li.track {
 	cursor: pointer;
 	display: inline-block;
-	border-radius: 50%;
 	width: 10px;
 	height: 10px;
+	border-radius: 50%;
 	background: green;
 }
