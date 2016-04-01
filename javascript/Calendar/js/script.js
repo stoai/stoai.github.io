@@ -12,17 +12,17 @@
 */
 
 function initCalendar() {
-	document.write("<div id = 'main' style = 'display:none; '>");
-	document.write("<table border = '2'>");
+	document.write("<div id='main' style='display:none;'>");
+	document.write("<table border='2'>");
 	document.write("<tr>");
 	//
-	document.write("<td><a href='#' onclick= 'prevYear();'>&larr;</a></td>");
-	document.write("<td><button type = 'button' onclick = 'prevMonth();'>Prev</button</td>");
-	document.write("<td id = 'id_month' colspan = '2'></td>");
-	document.write("<td id = 'id_year' colspan = '1'></td>");
-	document.write("<td><button type = 'button' onclick = 'nextMonth();'>Next</button</td>");
+	document.write("<td><a href='#' onclick='prevYear();'>&larr;</a></td>");
+	document.write("<td><button type='button' onclick ='prevMonth();'>Prev</button</td>");
+	document.write("<td id='id_month' colspan='2'></td>");
+	document.write("<td id='id_year' colspan='1'></td>");
+	document.write("<td><button type='button' onclick='nextMonth();'>Next</button</td>");
 	//
-	document.write("<td><a href='#' onclick= 'nextYear();'>&rarr;</a></td>");
+	document.write("<td><a href='#' onclick='nextYear();'>&rarr;</a></td>");
 	document.write("</tr>");
 	setWeekDay();
 	createDateTable();
@@ -37,12 +37,12 @@ function initCalendar() {
 */
 
 function setMonthList() {
-	var res = "<select id = 'selected_month' onchange = 'setMonth();' >";
+	var res = "<select id='selected_month' onchange='setMonth();' >";
 	for (i = 0;  i < months.length;  i++) {
 		if (i == MONTH) {
-			res  += "<option selected = 'selected' value ="+ i +">" + months[i] +"</option>";
+			res  += "<option selected='selected' value="+ i +">" + months[i] +"</option>";
 		}else {
-			res  += "<option value ="+ i +">"+ months[i] +"</option>";
+			res  += "<option value="+ i +">"+ months[i] +"</option>";
 		}
 	}
 	res += "</select>";
@@ -55,12 +55,12 @@ function setMonthList() {
 */
 
 function setYearList() {
-	var res = "<select id = 'selected_year' onchange = 'setYear();' >";
+	var res = "<select id='selected_year' onchange='setYear();' >";
 	for (i = 1950; i <=  2097; i++) {
 		if (YEAR == i) {
-			res  += "<option selected = 'selected' value =" + i +">" + i +"</option>";
+			res  += "<option selected='selected' value=" + i +">" + i +"</option>";
 		}else {
-			res  += "<option value =" + i +">" + i +"</option>";
+			res  += "<option value="+ i +">"+ i +"</option>";
 		}
 	}
 	res += "</select>";
@@ -76,7 +76,7 @@ function setYearList() {
 function setWeekDay() {
 	document.write("<tr>");
 	for (i = 0; i < days.length; i++) {
-		document.write("<th class = 'day'>");
+		document.write("<th class='day'>");
 		document.write(days[i]);
 		document.write("</th>");
 	}
@@ -93,7 +93,7 @@ function createDateTable() {
 	for (i = 0; i < 6; i++) {
 		document.write("<tr>");
 		for (j = 0; j < 7; j++) {
-			document.write("<td><a href ='#' id ='cell" + index +"' onclick = 'onClickDate(this)'></a></td>");
+			document.write("<td><a href='#' id='cell" + index +"' onclick='onClickDate(this)'></a></td>");
 			index++;
 		}
 		document.write("</tr>");
@@ -215,12 +215,22 @@ function prevYear() {
 }
 
 /**
+* The checkTime() function to parse numbers less than 10 to format 0x (Example: 9 to 09)
+*
+*/
+function checkTime(i) {
+	if (i < 10) {
+		i = "0" + i;
+	}
+     return i;
+}
+
+/**
 * The onClickDate() function to display information of selected date (date/month/year) into input tag.
 *
 */
-
 function onClickDate(ob) {
-	var info = ob.innerHTML + " - " + (parseInt(MONTH) + 1) + " - " + YEAR;
+	var info = checkTime(parseInt(ob.innerHTML)) + " - " + checkTime((parseInt(MONTH) + 1)) + " - " + YEAR;
 	document.getElementById("input").value = info;
 	document.getElementById("main").style.display = "none";
 }
