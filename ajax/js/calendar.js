@@ -215,12 +215,22 @@ function prevYear() {
 }
 
 /**
+* The checkTime() function to parse numbers less than 10 to format 0x (Example: 9 to 09)
+*
+*/
+function checkTime(i) {
+	if (i < 10) {
+		i = "0" + i;
+	}
+     return i;
+}
+
+/**
 * The onClickDate() function to display information of selected date (date/month/year) into input tag.
 *
 */
-
 function onClickDate(ob) {
-	var info = ob.innerHTML + " - " + (parseInt(MONTH) + 1) + " - " + YEAR;
+	var info = checkTime(parseInt(ob.innerHTML)) + " - " + checkTime((parseInt(MONTH) + 1)) + " - " + YEAR;
 	document.getElementById("birthday").value = info;
 	document.getElementById("main").style.display = "none";
 }
@@ -229,7 +239,6 @@ function onClickDate(ob) {
 * The onClickCal() function to display calendar.
 *
 */
-
 function onClickCal() {
 	document.getElementById("main").style.display = "block";
 }
