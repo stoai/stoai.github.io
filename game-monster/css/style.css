@@ -1,0 +1,19 @@
+body {
+	padding: 0;
+	margin: 50px;
+	background: black;
+}
+
+#game {
+	margin: 0 auto;
+	display: block;
+	cursor: pointer;
+}
+
+#option {
+	margin: 0 auto;
+	display: block;
+	background: rgb(9, 17, 56);
+	color: #FFFFFF;
+	cursor: pointer;
+}
