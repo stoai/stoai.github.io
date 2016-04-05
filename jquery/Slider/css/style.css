@@ -1,0 +1,84 @@
+* {
+	margin:0;
+	padding: 0;
+}
+/********************CSS for #slider  ********************/
+#slider {
+	margin: 0 auto;
+	height: 379px;
+	width: 960px;
+	position: relative;
+	border: solid 3px black;
+	background: black;
+}
+/********************CSS for #prev-slide and #next-slide  ********************/
+
+#slider #prev-slide, #next-slide {
+	height: 35px;
+	width: 35px;
+}
+
+/********************CSS details for button(image) previous image********************/
+#slider img#prev-slide {
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	margin-top: 142px;
+	margin-left: -35px;
+	float: left;
+}
+
+/********************CSS details for button(image) next image********************/
+#slider img#next-slide {
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	margin-top: 142px;
+	margin-right: -35px;
+	float: right;
+}
+
+/********************CSS for tag <li> hold images  ********************/
+#slider ul.slide-box {
+	position: absolute;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+	display: block;
+}
+
+#slider ul.slide-box li {
+    list-style: none;
+    display: none;
+}
+
+/********************CSS for .current (show current image)  ********************/
+#slider ul.slide-box li.current {
+    display: inline-block;
+}
+
+/********************CSS for #index  ********************/
+#index {
+	position: absolute;
+	top:360px;
+	left: 435px;
+}
+
+/********************CSS for #index-menu********************/
+ul#index-menu {
+	list-style-type: none;
+}
+
+/********************CSS for tracks********************/
+ul.index-menu > li.track {
+	cursor: pointer;
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: green;
+}
+
+ul.index-menu > li.tracked {
+	background: red;
+}
