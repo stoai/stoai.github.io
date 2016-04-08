@@ -11,7 +11,7 @@
 *
 */
 function initCalendar() {
-	document.write("<div id = 'main' style = 'display:none; '>");
+	document.write("<div id = 'main' style = 'display:none; margin-left: 60px'>");
 	document.write("<table border = '2'>");
 	document.write("<tr>");
 	//
