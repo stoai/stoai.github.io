@@ -213,7 +213,7 @@ function prevYear() {
 	}
 	setDateContent(MONTH, YEAR);
 }
-
+   
 /**
 * The checkTime() function to parse numbers less than 10 to format 0x (Example: 9 to 09)
 *

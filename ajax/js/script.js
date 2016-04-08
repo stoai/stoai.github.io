@@ -10,7 +10,7 @@ flagBirthday = false;
 function checkUsername() {
 	var username = document.getElementById("username");
 	var check_username = document.getElementById("check-username");
-	
+	       
 	if (isNull(username.value)) {
 		username.style.background = "#FDEDEC";
 		check_username.innerHTML = "*Username not empty!"
