@@ -1,7 +1,7 @@
  days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
  months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
  months_length = ["31", "28", "31", "30", "31", "30", "31", "31", "30", "31", "30", "31"];
-
+ 
  DAY = new Date();
  MONTH = DAY.getMonth();
  YEAR = DAY.getYear() + 1900;

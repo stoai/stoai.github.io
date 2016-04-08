@@ -117,7 +117,7 @@ function submitAjax() {
 		console.log("flagEmail: " + flagEmail);
 		callAjax("test.php");
 		console.log("DONE!");
-	} else {
+	} else { 
 		checkUsername();
 		checkPassword();
 		checkEmail();
