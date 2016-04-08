@@ -152,9 +152,7 @@ function notify() {
 		if (httpRequest.responseText == "true") {
 			result.innerHTML = "*Username is exist! Please enter another username.";
 		} else {
-			if (username.value != "") {
-				result.innerHTML = "Account " + username.value + " created successfully!";	
-			}
+			result.innerHTML = "Account " + username.value + " created successfully!";
 		}
 	}
 }
