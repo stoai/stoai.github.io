@@ -14,13 +14,17 @@ table tr th {
 }
 
 #button {
-	padding-left: 100px;
-	padding-top: 30px;
+	padding-left: 114px;
+	margin-top: 5px;
 }
 
 #button button {
 	text-align: center;
-	color: #2E86C1;
+	color: #fff;
+	margin-left: 10px;
+	background: brown;
+	width: 60px;
+	height: 25px;
 }
 
 #check-username, #check-password, #check-email {
