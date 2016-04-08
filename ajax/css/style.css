@@ -12,14 +12,6 @@ table tr th {
 	text-align: right;
 }
 
-.category{
-	padding: 5px;
-}
-
-.category input {
-	box-shadow: 2px 2px 2px lightgrey, 0 0 5px lightgrey, 0 0 10px lightgrey;
-}
-
 #button {
 	padding-left: 100px;
 	padding-top: 30px;

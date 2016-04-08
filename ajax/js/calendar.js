@@ -240,10 +240,8 @@ function onClickDate(ob) {
 *
 */
 function onDefaultDate() {
-	var defaultDate = checkTime(parseInt(DAY)) + " - " + checkTime((parseInt(MONTH) + 1)) + " - " + YEAR;
+	var defaultDate = checkTime(parseInt(DAY.getDate())) + " - " + checkTime((parseInt(MONTH) + 1)) + " - " + YEAR;
 	document.getElementById("birthday").value = defaultDate;
-	document.getElementById("main").style.display = "none";
-	return defaultDate;
 }
 
 /**
@@ -255,9 +253,8 @@ function onClickCal() {
 }
 
 /**
-* Invoked initTable() function and refresh tag input when load page.
+* Invoked initTable() and onDefaultDate() functions and refresh tag input when load page.
 *
 */
-
-window.onload = initCalendar();
-document.getElementById("birthday").value = "";
+onDefaultDate();
+initCalendar();
