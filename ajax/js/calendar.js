@@ -236,6 +236,17 @@ function onClickDate(ob) {
 }
 
 /**
+* The onDefaultDate() function to display default date (current date) into input tag.
+*
+*/
+function onDefaultDate() {
+	var defaultDate = checkTime(parseInt(DAY)) + " - " + checkTime((parseInt(MONTH) + 1)) + " - " + YEAR;
+	document.getElementById("birthday").value = defaultDate;
+	document.getElementById("main").style.display = "none";
+	return defaultDate;
+}
+
+/**
 * The onClickCal() function to display calendar.
 *
 */

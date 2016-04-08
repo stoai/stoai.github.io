@@ -9,36 +9,50 @@
 	</head>
 	<body>
 		<form action="" method="post">
-			<div class="category">
-				<strong>Username:</strong>
-				<input type="text" name="username" id="username" onblur="checkUsername()" />
-				<span id="check-username"></span>
-			</div><!--End of category username -->
-			
-			<div class="category">
-				<strong>Password:</strong>
-				<input type="text" name="password" id="password" onblur="checkPassword()" />
-				<span id="check-password"></span>
-			</div><!--End of category password -->
-			
-			<div class="category">
-				<strong>Email:</strong>
-				<input type="text" name="email" id="email" onblur="checkEmail()" />
-				<span id="check-email"></span>
-			</div><!--End of category email -->
-			
-			<div id="form-input" class="category">
-				<strong>Date of birth:</strong>
-				<input type="text" name="birthday" id="birthday" readonly="readonly" onclick="onClickCal()" onblur="checkBirthday()" />
-				<a href="#"><img src="images/calendar.png" alt="" title="" onclick="onClickCal()" /></a>
-				<span id="check-birthday"></span>
-			</div><!--End of birthday -->
-			
-			<script type="text/javascript" src="js/calendar.js"></script>
-			<div id="button">
-				<button type="button" id="submit" onclick="submitAjax()">Submit</button>
-				<button type="refresh">Reset</button>
-			</div><!--End of #button -->
+			<table>
+				<tr>
+					<div class="category">
+					<th>Username:</th>
+					<td><input type="text" name="username" id="username" onblur="checkUsername()" /></td>
+					<td><span id="check-username"></span></td>
+					</div><!--End of category username -->
+				</tr>
+
+				<tr>
+					<div class="category">
+						<th>Password:</th>
+						<td><input type="text" name="password" id="password" onblur="checkPassword()" /></td>
+						<td><span id="check-password"></span></td>
+					</div><!--End of category password -->
+				</tr>
+
+				<tr>
+					<div class="category">
+						<th>Email:</th>
+						<td><input type="text" name="email" id="email" onblur="checkEmail()" /></td>
+						<td><span id="check-email"></span></td>
+					</div><!--End of category email -->
+				</tr>
+
+				<tr>
+					<div id="form-input" class="category">
+						<th>Date of birth:</th>
+						<td>
+							<input type="text" name="birthday" id="birthday" readonly="readonly" onclick="onClickCal()" onblur="checkBirthday()" />
+						</td>
+						<td><span id="check-birthday"></span>
+						
+					</div><!--End of birthday -->
+					<a href="#"><img src="images/calendar.png" alt="" title="" onclick="onClickCal()" /></a>
+				</tr>
+				
+				<script type="text/javascript" src="js/calendar.js"></script>
+
+				<div id="button">
+					<button type="button" id="submit" onclick="submitAjax()">Submit</button>
+					<button type="refresh">Reset</button>
+				</div><!--End of #button -->
+			</table>
 		</form><!--End of form -->
 		
 		<h3 id="result"></h3>
