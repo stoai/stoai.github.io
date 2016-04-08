@@ -7,30 +7,27 @@ form {
 	width: 790px;
 	padding: 5px;
 	margin: 5px;
-}
+} 
+
 table tr th {
 	text-align: right;
 }
 
-.category{
-	padding: 5px;
-}
-
-.category input {
-	box-shadow: 2px 2px 2px lightgrey, 0 0 5px lightgrey, 0 0 10px lightgrey;
-}
-
 #button {
-	padding-left: 100px;
-	padding-top: 30px;
+	padding-left: 114px;
+	margin-top: 5px;
 }
 
 #button button {
 	text-align: center;
-	color: #2E86C1;
+	color: #fff;
+	margin-left: 10px;
+	background: brown;
+	width: 60px;
+	height: 25px;
 }
 
-#check-username, #check-password, #check-email, #check-birthday {
+#check-username, #check-password, #check-email {
 	color: red;
 	font-size: 13px;
 }
@@ -39,4 +36,3 @@ table tr th {
 	color: orange;
 	font-size: 30px;
 }
-
