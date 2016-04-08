@@ -8,6 +8,7 @@ form {
 	padding: 5px;
 	margin: 5px;
 }
+
 table tr th {
 	text-align: right;
 }
@@ -22,7 +23,7 @@ table tr th {
 	color: #2E86C1;
 }
 
-#check-username, #check-password, #check-email, #check-birthday {
+#check-username, #check-password, #check-email {
 	color: red;
 	font-size: 13px;
 }
@@ -31,4 +32,3 @@ table tr th {
 	color: orange;
 	font-size: 30px;
 }
-

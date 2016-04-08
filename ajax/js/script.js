@@ -1,7 +1,6 @@
-flagUsername = false;
-flagPassword = false;
-flagEmail = false;
-flagBirthday = false;
+var flagUsername = false;
+var flagPassword = false;
+var flagEmail = false;
 
 /**
 *The checkUsername() function is check valid username.
@@ -9,7 +8,7 @@ flagBirthday = false;
 */
 function checkUsername() {
 	var username = document.getElementById("username");
-	var check_username = document.getElementById("check-username");
+	var check_username = document.getElementById("check-username");	
 	
 	if (isNull(username.value)) {
 		username.style.background = "#FDEDEC";
@@ -29,7 +28,6 @@ function checkUsername() {
 *The checkPassword() function is check valid password.
 *
 */
-
 function checkPassword() {
 	var password = document.getElementById("password");
 	var check_password = document.getElementById("check-password");
@@ -54,7 +52,7 @@ function checkPassword() {
 */
 function checkEmail() {
 	var email = document.getElementById("email");
-	var check_email = document.getElementById("check-email");
+	var check_email = document.getElementById("check-email");	
 	
 	if (isNull(email.value)) {
 		email.style.background = "#FDEDEC";
@@ -67,24 +65,6 @@ function checkEmail() {
 		email.style.background = "#FFF";
 	}
 }
-
-/**
-*The checkBirthday() function is check valid birthday(not empty).
-*
-*/
-function checkBirthday() {
-	var birthday = document.getElementById("birthday");
-	var check_birthday = document.getElementById("check-birthday");
-	if (isNull(birthday.value)) {
-		birthday.style.background = "#FDEDEC";
-		check_birthday.innerHTML ="*Date of birth not empty!"
-	} else {
-		flagBirthday = true;
-		check_birthday.innerHTML = "";
-		birthday.style.background = "lightgrey";
-	}
-}
-
 
 /**
 * The isNull() function is check field input empty or not empty.
@@ -131,13 +111,16 @@ function checkValidate(text) {
 *
 */
 function submitAjax() {
-	if ((flagUsername && flagPassword) && (flagEmail && flagBirthday)) {
+	if (flagUsername && flagPassword && flagEmail) {
 		console.log("flagUsername: " + flagUsername);
 		console.log("flagPassword: " + flagPassword);
 		console.log("flagEmail: " + flagEmail);
-		console.log("flagBirthday: " + flagBirthday);
 		callAjax("test.php");
 		console.log("DONE!");
+	} else {
+		checkUsername();
+		checkPassword();
+		checkEmail();
 	}
 }
 
@@ -163,12 +146,13 @@ function callAjax(url) {
 */
 function notify() {
 	if (httpRequest.readyState == 4 && httpRequest.status == 200) { // value 'status' equal 200 means request successfully.
+		var username = document.getElementById("username");
 		var result = document.getElementById("result");
 		console.log("responseText=" + httpRequest.responseText);
 		if (httpRequest.responseText == "true") {
 			result.innerHTML = "*Username is exist! Please enter another username.";
 		} else {
-			result.innerHTML = "Created successfully!";
+			result.innerHTML = "Account " + username.value + " created successfully!";
 		}
 	}
 }

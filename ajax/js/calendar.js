@@ -10,7 +10,6 @@
 * The initTable() function creates a table (frame) to show calendar.
 *
 */
-
 function initCalendar() {
 	document.write("<div id = 'main' style = 'display:none; '>");
 	document.write("<table border = '2'>");
@@ -35,7 +34,6 @@ function initCalendar() {
 * The setMonthList() function is set dropdown-list of months.
 *
 */
-
 function setMonthList() {
 	var res = "<select id = 'selected_month' onchange = 'setMonth();' >";
 	for (i = 0;  i < months.length;  i++) {
@@ -53,7 +51,6 @@ function setMonthList() {
 * The setYearList() function is set dropdown-list of years.
 *
 */
-
 function setYearList() {
 	var res = "<select id = 'selected_year' onchange = 'setYear();' >";
 	for (i = 1950; i <=  2097; i++) {
@@ -72,7 +69,6 @@ function setYearList() {
 * The setWeekDay() function is prints weekday from Sunday(0) to Saturday(6).
 *
 */
-
 function setWeekDay() {
 	document.write("<tr>");
 	for (i = 0; i < days.length; i++) {
@@ -87,7 +83,6 @@ function setWeekDay() {
 * The createDateTable() function is prints a table includes 5 rows and 6 columns to holds dates in month.
 *
 */
-
 function createDateTable() {
 	var index = 0;
 	for (i = 0; i < 6; i++) {
@@ -104,7 +99,6 @@ function createDateTable() {
 *
 */
 function setDateContent(MONTH, YEAR) {
-
 	document.getElementById("id_month").innerHTML = setMonthList();
 	document.getElementById("id_year").innerHTML = setYearList();
 
@@ -142,7 +136,6 @@ function setDateContent(MONTH, YEAR) {
 * The setYear() function is set selected year and display corresponding dates in month, selected year.
 *
 */
-
 function setYear() {
 	var element = document.getElementById("selected_year");
 	YEAR = element.options[element.selectedIndex].value;
@@ -153,7 +146,6 @@ function setYear() {
 * The setMonth() function is set selected month and display dates in selected month.
 *
 */
-
 function setMonth() {
 	var element = document.getElementById("selected_month");
 	MONTH = element.options[element.selectedIndex].value;
@@ -164,7 +156,6 @@ function setMonth() {
 * The nextMonth() function is move to next month.
 *
 */
-
 function nextMonth() {
 	if (MONTH >= 0 && MONTH < 11) {
 		MONTH++;
@@ -179,7 +170,6 @@ function nextMonth() {
 * The nextYear() function is move to next year.
 *
 */
-
 function nextYear() {
 	if (YEAR < 2097) {
 		YEAR++;
@@ -191,7 +181,6 @@ function nextYear() {
 * The prevMonth() function is move to previous month.
 *
 */
-
 function prevMonth() {
 	if (MONTH <=  11 && MONTH > 0) {
 		MONTH--;
@@ -206,7 +195,6 @@ function prevMonth() {
 * The prevYear() function is move to previous year.
 *
 */
-
 function prevYear() {
 	if (YEAR > 1950) {
 		YEAR--;

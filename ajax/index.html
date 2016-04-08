@@ -8,7 +8,7 @@
 		<script type="text/javascript" src="js/script.js"></script>
 	</head> 
 	<body>
-		<form action="" method="post">
+		<form>
 			<table>
 				<tr>
 					<th>Username:</th>
@@ -36,17 +36,17 @@
 					<td><span id="check-birthday"></span>
 					<a href="#"><img src="images/calendar.png" alt="" title="" onclick="onClickCal()" /></a>
 				</tr>
-			</table>
+			</table><!--End of table -->
 
 			<script type="text/javascript" src="js/calendar.js"></script>
 			
 			<div id="button">
 				<button type="button" id="submit" onclick="submitAjax()">Submit</button>
-				<button type="refresh">Reset</button>
+				<button type="reset">Reset</button>
 			</div><!--End of #button -->
 
 		</form><!--End of form -->
 		
-		<h3 id="result"></h3>
+		<p id="result"></p>
 	</body>
 </html>
