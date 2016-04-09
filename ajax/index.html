@@ -31,9 +31,9 @@
 				<tr>
 					<th>Date of birth:</th>
 					<td>
-						<input type="text" name="birthday" id="birthday" readonly="readonly" onclick="onClickCal()" onblur="checkBirthday()" />
+						<input type="text" name="birthday" id="birthday" readonly="readonly" onfocus="onClickCal()" />
 					</td>
-					<td><span id="check-birthday"></span>
+					
 					<a href="#"><img src="images/calendar.png" alt="" title="" onclick="onClickCal()" /></a>
 				</tr>
 			</table><!--End of table -->
@@ -42,7 +42,7 @@
 			
 			<div id="button">
 				<button type="button" id="submit" onclick="submitAjax()">Submit</button>
-				<button type="reset">Reset</button>
+				<button type="button" onclick="onReset()">Reset</button>
 			</div><!--End of #button -->
 
 		</form><!--End of form -->
