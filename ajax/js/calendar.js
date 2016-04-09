@@ -245,4 +245,4 @@ function onClickCal() {
 *
 */
 onDefaultDate();
-initCalendar();
+initCalendar(); 

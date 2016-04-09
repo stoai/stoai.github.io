@@ -158,7 +158,7 @@ function notify() {
 			}
 		}
 	}
-}
+} 
 
 /**
 *The onReset() function is reset fields and flags.
