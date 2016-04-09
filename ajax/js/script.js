@@ -72,7 +72,7 @@ function checkEmail() {
 *
 */
 function isNull(text) {
-	if (text == null || text == "") {
+	if (text == "" || text == null) {
 		return true;
 	}
 	return false;
@@ -118,7 +118,7 @@ function submitAjax() {
 		console.log("flagEmail: " + flagEmail);
 		callAjax("test.php");
 		console.log("DONE!");
-	} else { 
+	} else {
 		checkUsername();
 		checkPassword();
 		checkEmail();
@@ -158,4 +158,18 @@ function notify() {
 			}
 		}
 	}
+}
+
+/**
+*The onReset() function is reset fields and flags.
+*
+*/
+function onReset() {
+	document.getElementById('username').value = "";
+	document.getElementById('password').value = "";
+	document.getElementById('email').value = "";
+	document.getElementById('result').innerHTML = "";
+	flagUsername = false;
+	flagPassword = false;
+	flagEmail = false;
 }
