@@ -6,11 +6,12 @@ body {
 }
 
 #wrapper {
-	max-width: 1265px;
-	height: 940px;
+	width: 1265px;
+	height: 950px;
 	margin: 0 auto;
 	background-color: #2E2F34;	
 }
+
 /*******CSS for header*******/
 #wrapper #header {
 	width: 100%;
@@ -48,8 +49,10 @@ body {
 
 #wrapper #intro .intro-text span {
 	color: #DEDE19;
-	font-size: 25px;
+	font-size: 21px;
 	padding-bottom: 10px;
+	word-spacing: 11px;
+	letter-spacing: 0.5px;
 }
 
 #wrapper #intro .intro-text p {
@@ -75,14 +78,16 @@ body {
 }
 
 #wrapper #slide ul li {
-	display: inline;
-	overflow: auto;
+	display: inline-block;
+	width: 230px;
+	height: 102px;
+	padding-top: 10px;
 }
 
 #wrapper #slide ul li img.item-number {
 	position:relative;
-	bottom: 69px;
-	right: 39px;
+	bottom: 102px;
+	right: -189px;
 }
 
 /*******CSS for content*******/
@@ -91,7 +96,6 @@ body {
 	width: 100%;
 	height: 372px;
 	border-top: 1px solid #474A51;
-	border-bottom: 1px solid #474A51;
 }
 
 #wrapper #content #content-left {
@@ -100,15 +104,18 @@ body {
 	float: left;
 	margin-left: 125px;
 	background: url(../images/home_services_bg_design.gif) no-repeat;
-	background-position: 250px 170px;
+	background-position: 250px 200px;
 }
+
 #wrapper #content #content-left span {
 	color: #ffff00;
-	font-size: 21px;
+	font-size: 18px;
+	word-spacing: 13px;
+	letter-spacing: 0.5px;
 }
 
 #wrapper #content #content-left > p {
-	font-size: 15px;
+	font-size: 11px;
 	color: #fff;
 	text-align: justify;
 }
@@ -123,24 +130,28 @@ body {
 
 #wrapper #content #content-right span {
 	color: #ffff00;
-	font-size: 21px;
+	font-size: 18px;
+	word-spacing: 13px;
+	letter-spacing: 0.5px;
 }
 
 #wrapper #content #content-right > p {
-	padding-top: 40px;
-	font-size: 15px;
+	padding-top: 30px;
+	font-size: 11px;
 	color: #fff;
 	text-align: justify;
 }
+
 /*******CSS for footer*******/
 #wrapper #footer {
 	width: 100%;
-	height: 120px;
+	height: 130px;
 	clear: both;
 	background: url(../images/bg_footer.gif) repeat-x;
-    background-position: left right;
+    	border-top: 1px solid #474A51;
 }
 
 #wrapper #footer p {
 	text-align: center;
+	margin-top: -2px;
 }
