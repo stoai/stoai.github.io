@@ -31,10 +31,14 @@
 				<tr>
 					<th>Date of birth:</th>
 					<td>
-						<input type="text" name="birthday" id="birthday" readonly="readonly" onfocus="onClickCal()" />
+						<div id="cal">
+							<input type="text" name="birthday" id="birthday" readonly="readonly" onfocus="onClickCal()" />	
+							<a href="#"><img src="images/calendar.png" alt="" title="" onclick="onClickCal()" /></a>
+						</div>
+						
 					</td>
 					
-					<a href="#"><img src="images/calendar.png" alt="" title="" onclick="onClickCal()" /></a>
+					
 				</tr>
 			</table><!--End of table -->
 

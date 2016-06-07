@@ -13,18 +13,44 @@ table tr th {
 	text-align: right;
 }
 
+#cal {
+	position: relative;
+}
+
+/**
+* Set position for calendar image.
+*/
+#cal a img {
+	position: absolute;
+	width: 35px;
+	height: 37px;
+	left: -112px;
+	top: -75px;
+}
+
 #button {
 	padding-left: 114px;
 	margin-top: 5px;
+}
+input {
+	width: 250px;
+	height: 30px;
+	border-radius: 2px;
+	border: 1px solid #b4eecc;
+	box-shadow: 1px 2px 3px #b4eecc; 
 }
 
 #button button {
 	text-align: center;
 	color: #fff;
+	cursor: pointer;
 	margin-left: 10px;
-	background: brown;
-	width: 60px;
-	height: 25px;
+	background-color: #2471a3;
+	width: 75px;
+	height: 28px;
+	border: 1px solid #2471a3;
+	border-radius: 2px;
+	box-shadow: 1px 2px 3px #2471a3;
 }
 
 #check-username, #check-password, #check-email {
