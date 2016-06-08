@@ -3,10 +3,10 @@ var contextGame = game.getContext("2d");
 var option = document.getElementById("option");
 var contextOption = option.getContext("2d");
 var score = 0; //Score
-var bestScore = 10;//
-var fakeScore = 100;//Use for setting level.
+var bestScore = 0;// Best score
+//var fakeScore = 100;//Use for setting level.
 var numberMonster = 1; //Number monster.
-var heart = 4;//Stand for turn play game.(Default is 5 times).
+var heart = 3;//Stand for turn play game.(Default is 5 times).
 var speed = 1; //Speed movement of monsters.
 var flagRun = true;//Flag check run game.
 var flagPause = false;//Flag check button "Pause".
@@ -53,141 +53,31 @@ var pauseImage = new Image();
 pauseImage.src = "images/pause.png";
 
 
-//Create object monster
-var Monster_1 = {
-	beginX: 0,//Position monster appear (beginX,beginY).
-	beginY: 0,//
-	stopX: 120,//Position monster stop move(stopX,stopY) and come back start position (beginX,beginY).
-	stopY: 120,//
-	startX: 0,//Same (beginX,beginY), to flexible appear.
-	startY: 0,//
-	endX: 120,//Same (stopX,stopY).
-	endY: 120,//
-	speed: speed,//speed movement of monster.
-	click: false,//'false' when monster alive, 'true' when monster die (clicked).
-	show: true,//'false' when monster not appear, 'true' when monster appear.
-	dieX: 0,//Determine position(dieX,dieY) where monster die (clicked).
-	dieY: 0//
+function Monster(beginX, beginY, stopX, stopY, startX, startY, endX, endY, speed, click, show, dieX, dieY) {
+	this.beginX = beginX;//Position monster appear (beginX,beginY).
+	this.beginY = beginY;
+	this.stopX = stopX;//Position monster stop move(stopX,stopY) and come back start position (beginX,beginY).
+	this.stopY = stopY;
+	this.startX = startX;//Same (beginX,beginY), to flexible appear.
+	this.startY = startY;
+	this.endX = endX;//Same (stopX,stopY).
+	this.endY = endY;
+	this.speed = speed;//speed movement of monster.
+	this.click = click;//'false' when monster alive, 'true' when monster die (clicked).
+	this.show = show;//'false' when monster not appear, 'true' when monster appear.
+	this.dieX = dieX;//Determine position(dieX,dieY) where monster die (clicked).
+	this.dieY = dieY;
 }
 
-var Monster_2 = {
-	beginX: 190,//Position monster appear (beginX,beginY)
-	beginY: 0,//
-	stopX: 190,//Position monster stop move(stopX,stopY) and come back start position (beginX,beginY)
-	stopY: 120,//
-	startX: 190,//Same (beginX,beginY), to flexible appear.
-	startY: 0,//
-	endX: 190,//Same (stopX,stopY)
-	endY: 120,//
-	
-	speed: speed,//speed movement of monster.
-	click: false,//'false' when monster alive, 'true' when monster die (clicked).
-	show: false,//'false' when monster not appear, 'true' when monster appear.
-	dieX: 0,//Determine position(dieX,dieY) where monster die (clicked).
-	dieY: 0//
-}
-
-var Monster_3 = {
-	beginX: 380,//Position monster appear (beginX,beginY)
-	beginY: 0,//
-	stopX: 260,//Position monster stop move(stopX,stopY) and come back start position (beginX,beginY)
-	stopY: 120,//
-	startX: 380,//Same (beginX,beginY), to flexible appear.
-	startY: 0,//
-	endX: 260,//Same (stopX,stopY)
-	endY: 120,//
-	
-	speed: speed,//speed movement of monster.
-	click: false,//'false' when monster alive, 'true' when monster die (clicked).
-	show: false,//'false' when monster not appear, 'true' when monster appear.
-	dieX: 0,//Determine position(dieX,dieY) where monster die (clicked).
-	dieY: 0,//
-}
-
-var Monster_4 = {
-	beginX: 380,//Position monster appear (beginX,beginY)
-	beginY: 190,//
-	stopX: 260,//Position monster stop move(stopX,stopY) and come back start position (beginX,beginY)
-	stopY: 190,//
-	startX: 380,//Same (beginX,beginY), to flexible appear.
-	startY: 190,//
-	endX: 260,//Same (stopX,stopY)
-	endY: 190,//
-	
-	speed: speed,//speed movement of monster.
-	click: false,//'false' when monster alive, 'true' when monster die (clicked).
-	show: false,//'false' when monster not appear, 'true' when monster appear.
-	dieX: 0,//Determine position(dieX,dieY) where monster die (clicked).
-	dieY: 0//
-}
-
-var Monster_5 = {
-	beginX: 380, //Position monster appear (beginX,beginY)
-	beginY: 380, //
-	stopX: 260,//Position monster stop move(stopX,stopY) and come back start position (beginX,beginY)
-	stopY: 260,//
-	startX: 380,//Same (beginX,beginY), to flexible appear.
-	startY: 380,//
-	endX: 260,//Same (stopX,stopY)
-	endY: 260,//
-	
-	speed: speed,//speed movement of monster.
-	click: false,//'false' when monster alive, 'true' when monster die (clicked).
-	show: false,//'false' when monster not appear, 'true' when monster appear.
-	dieX: 0,//Determine position(dieX,dieY) where monster die (clicked).
-	dieY: 0//
-}
-
-var Monster_6 = {
-	beginX: 190,//Position monster appear (beginX,beginY)
-	beginY: 380,//
-	stopX: 190,//Position monster stop move(stopX,stopY) and come back start position (beginX,beginY)
-	stopY: 260,//
-	startX: 190,//Same (beginX,beginY), to flexible appear.
-	startY: 380,//
-	endX: 190,//Same (stopX,stopY)
-	endY: 260,//
-	
-	speed: speed,//speed movement of monster.
-	click: false,//'false' when monster alive, 'true' when monster die (clicked).
-	show: false,//'false' when monster not appear, 'true' when monster appear.
-	dieX: 0,//Determine position(dieX,dieY) where monster die (clicked).
-	dieY: 0//
-}
-
-var Monster_7 = {
-	beginX: 0,//Position monster appear (beginX,beginY)
-	beginY: 380,//
-	stopX: 120,//Position monster stop move(stopX,stopY) and come back start position (beginX,beginY)
-	stopY: 260,//
-	startX: 0,//Same (beginX,beginY), to flexible appear.
-	startY: 380,//
-	endX: 120,//Same (stopX,stopY)
-	endY: 260,//
-	
-	speed: speed,//speed movement of monster.
-	click: false,//'false' when monster alive, 'true' when monster die (clicked).
-	show: false,//'false' when monster not appear, 'true' when monster appear.
-	dieX: 0,//Determine position(dieX,dieY) where monster die (clicked).
-	dieY: 0//
-}
-
-var Monster_8 = {
-	beginX: 0,//Position monster appear (beginX,beginY)
-	beginY: 190,//
-	stopX: 120,//Position monster stop move(stopX,stopY) and come back start position (beginX,beginY)
-	stopY: 190,//
-	startX: 0,//Same (beginX,beginY), to flexible appear.
-	startY: 190,//
-	endX: 120,//Same (stopX,stopY)
-	endY: 190,//
-	
-	speed: speed,//speed movement of monster.
-	click: false,//'false' when monster alive, 'true' when monster die (clicked).
-	show: false,//'false' when monster not appear, 'true' when monster appear.
-	dieX: 0,//Determine position(dieX,dieY) where monster die (clicked).
-	dieY: 0//
-}
+//Creates monster objects
+var Monster_1 = new Monster(0, 0, 120, 120, 0, 0, 120, 120, speed, false, true, 0, 0);
+var Monster_2 = new Monster(190, 0, 190, 120, 190, 0, 190, 120, speed, false, false, 0, 0);
+var Monster_3 = new Monster(380, 0, 260, 120, 380, 0, 260, 120, speed, false, false, 0, 0);
+var Monster_4 = new Monster(380, 190, 260, 190, 380, 190, 260, 190, speed, false, false, 0, 0);
+var Monster_5 = new Monster(380, 380, 260, 260, 380, 380, 260, 260, speed, false, false, 0, 0);
+var Monster_6 = new Monster(190, 380, 190, 260, 190, 380, 190, 260, speed, false, false, 0, 0);
+var Monster_7 = new Monster(0, 380, 120, 260, 0, 380, 120, 260, speed, false, false, 0, 0);
+var Monster_8 = new Monster(0, 190, 120, 190, 0, 190, 120, 190, speed, false, false, 0, 0);
 
 var MainMonster = {
 	startX: 190,
@@ -206,27 +96,27 @@ var MainMonster = {
 /*=====================OPTION=====================*/
 
 //Create event click for buttons.
-option.addEventListener("click", function(e) {
-	 var location_X = e.pageX - this.offsetLeft;
- 	 var location_Y = e.pageY - this.offsetTop;
+option.addEventListener("click", function(event) {
+	 var location_X = event.pageX - this.offsetLeft;
+ 	 var location_Y = event.pageY - this.offsetTop;
 	console.log("OPTION location_X: " + location_X);
 	console.log("OPTION location_Y: " + location_Y);
 
 	//Button Pause
 	if ((location_X > 404 && location_X < 437) && ( location_Y > 60 && location_Y < 99)) { 
-		flagPause = true;
 		if (flagRun) {
+			flagPause = true;
 			flagRun = false;
 			score -= 5;
-			fakeScore -= 5;
+			//fakeScore -= 5;
 			heart--;
 			console.log("PAUSE");
 		}
 		setTimeout(function() {
-				flagRun = true;
-				flagPause = false;
-				main();
-			}, 7000);
+			flagRun = true;
+			flagPause = false;
+			main();
+		}, 7000);
 	}
 
 	//Button Restart
@@ -238,7 +128,9 @@ option.addEventListener("click", function(e) {
 
 	//Button Boom
 	if ((location_X > 300 && location_X < 333) && (location_Y > 63 && location_Y < 96)) {
-		flagBoom = true;
+		if (flagRun) {
+			flagBoom = true;	
+		}
 		if (flagBoom) {
 			if (quantityBoom == 0) {
 				flagBoom = false;
@@ -263,7 +155,7 @@ option.addEventListener("click", function(e) {
 				flagRun = true;
 				flagStop = false;
 				main();
-			}, 2000);
+			}, 3000);
 		}
 	}
 });
@@ -271,9 +163,9 @@ option.addEventListener("click", function(e) {
 /*=====================GAME=====================*/
 
 //Create event click for monsters.
-game.addEventListener("click", function (e) {
-	var location_X = e.pageX - this.offsetLeft;
-	var location_Y = e.pageY - this.offsetTop;
+game.addEventListener("click", function (event) {
+	var location_X = event.pageX - this.offsetLeft;
+	var location_Y = event.pageY - this.offsetTop;
 	console.log("GAME location_X: " + location_X);
 	console.log("GAME location_Y: " + location_Y);
 	
@@ -315,7 +207,7 @@ game.addEventListener("click", function (e) {
 			&& (MainMonster.startY < location_Y) && (location_Y < (MainMonster.startY + monsterImage.height))) {
 			score += 20;
 			heart++;
-			fakeScore += 10;
+			//fakeScore += 10;
 			MainMonster.click = true;
 			MainMonster.show = false;
 			MainMonster.dieX = MainMonster.startX;
@@ -367,6 +259,7 @@ game.addEventListener("click", function (e) {
 	}
 });
 
+
 //Execute action for click monsters.
 function clickMonster(monster, location_X, location_Y) {
 		if ((monster.startX < location_X) && (location_X < (monster.startX + monsterImage.width)) && (monster.startY < location_Y) && (location_Y < (monster.startY + monsterImage.height))) {
@@ -374,7 +267,7 @@ function clickMonster(monster, location_X, location_Y) {
 				MainMonster.show =  true;
 			}
 			score += 10;
-			fakeScore += 10;
+			//fakeScore += 10;
 			monster.click = false;
 			monster.show = false;
 			monster.dieX = monster.startX;
@@ -390,8 +283,8 @@ function clickMonster(monster, location_X, location_Y) {
 			}
 		} else {
 			score -= 10;
-			fakeScore -= 10;
-			if(score < 0){
+			//fakeScore -= 10;
+			if (score < 0) {
 				heart--;
 				score = 0;
 			}
@@ -472,7 +365,7 @@ var actionBoom = function() {
 		showBlood(MainMonster.startX, MainMonster.startY);
 	}
 
-	speed = speed;
+	//speed = speed;
 	render();
 	for (var i = 0; i < numberMonster; i++) {
 		randomMonster();
@@ -515,7 +408,7 @@ var randomMonster = function() {
 	
 	var value = Math.floor((Math.random() * 8) + 1);
 	console.log("Value random: "+value);
-	switch(value) {
+	switch (value) {
 		case 1:
 			if (!Monster_1.show) {
 				Monster_1.show = true;
@@ -567,7 +460,7 @@ function refreshMonster(monster) {
 	monster.startY = monster.beginY;
 	monster.stopX = monster.endX;
 	monster.stopY = monster.endY;
-	monster.speed = speed;
+	monster.speed = 1;
 }
 
 //Method restart game.
@@ -576,8 +469,8 @@ var restart = function() {
 	flagRun = true;
 	numberMonster = 1;
 	score = 0;
-	fakeScore = 10;
-	heart = 5;
+	//fakeScore = 10;
+	heart = 3;
 	quantityBoom = 3;
 	countStop = 3;
 	flagPause = false;
@@ -674,6 +567,7 @@ var render = function() {
 	contextOption.fillStyle = "rgb(29, 214, 4)";
 	contextOption.font = "20px Arial";
 	contextOption.fillText("Score: " + score, 10, 30);
+	contextOption.fillText("Best Score: " + localStorage.getItem("bestScore"), 135, 30);
 	contextOption.fillText("Random Monster: " + numberMonster, 300, 30);
 	contextOption.fillText("Heart: ", 10, 60);
 	contextOption.fillText("Speed: " + speed, 10, 90);
@@ -744,7 +638,7 @@ var updateMonster = function(monster) {
 
 //Setting level game.
 var setLevel = function() {
-	var level = fakeScore / 100;
+	var level = score / 200;
 	console.log(("Level: " + level));
 	switch (parseInt(level)) {
 		case 1:
@@ -813,20 +707,25 @@ var main = function() {
 	
 	render();
 	
-	var best = parseInt(localStorage.getItem("bestScore"));
 	
+	var best = parseInt(localStorage.getItem("bestScore"));
 	if (best < score) {
 		localStorage.setItem("bestScore", score);
 	}
 	
 	if (heart == 0) {
+		flagRun = false;
+		flagStop = false;
+		flagPause = false;
+		flagBoom = false;
+		
 		contextGame.fillStyle = "red";
 		contextGame.font = "50px Arial";
 		contextGame.fillText("Game Over!!!", 120, 200);
 		contextGame.font = "30px Arial";
 		contextGame.fillStyle = "#5bfa3f";
-		contextGame.strokeText("Score = " + score, 170, 240);
-		contextGame.strokeText("Best score = " + localStorage.getItem("bestScore"), 170, 280);
+		contextGame.fillText("Score = " + score, 170, 240);
+		contextGame.fillText("Best score = " + localStorage.getItem("bestScore"), 170, 280);
 	} else {
 		if (flagRun) {
 			requestAnimationFrame(main);
@@ -836,4 +735,3 @@ var main = function() {
 
 /*=====================*/
 window.onload = main();
-
