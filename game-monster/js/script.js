@@ -4,11 +4,11 @@ var option = document.getElementById("option");
 var contextOption = option.getContext("2d");
 var score = 0; //Score
 var bestScore = 0;// Best score
-//var fakeScore = 100;//Use for setting level.
 var numberMonster = 1; //Number monster.
 var heart = 3;//Stand for turn play game.(Default is 5 times).
 var speed = 1; //Speed movement of monsters.
 var flagRun = true;//Flag check run game.
+var flagEnd = false;//Flag check game end.
 var flagPause = false;//Flag check button "Pause".
 var flagStop = false;//Flag check button "Stop".
 var flagBoom = false;//Flag check button "Boom".
@@ -262,12 +262,12 @@ game.addEventListener("click", function (event) {
 
 //Execute action for click monsters.
 function clickMonster(monster, location_X, location_Y) {
+	if (!flagEnd) {
 		if ((monster.startX < location_X) && (location_X < (monster.startX + monsterImage.width)) && (monster.startY < location_Y) && (location_Y < (monster.startY + monsterImage.height))) {
 			if (score % 200 == 0) {
 				MainMonster.show =  true;
 			}
 			score += 10;
-			//fakeScore += 10;
 			monster.click = false;
 			monster.show = false;
 			monster.dieX = monster.startX;
@@ -283,12 +283,12 @@ function clickMonster(monster, location_X, location_Y) {
 			}
 		} else {
 			score -= 10;
-			//fakeScore -= 10;
 			if (score < 0) {
 				heart--;
 				score = 0;
 			}
 		}
+	}	
 }
 
 //Create element blood when monster died (clicked).
@@ -467,9 +467,9 @@ function refreshMonster(monster) {
 var restart = function() {
 	speed = 1;
 	flagRun = true;
+	flagEnd = false;
 	numberMonster = 1;
 	score = 0;
-	//fakeScore = 10;
 	heart = 3;
 	quantityBoom = 3;
 	countStop = 3;
@@ -718,6 +718,7 @@ var main = function() {
 		flagStop = false;
 		flagPause = false;
 		flagBoom = false;
+		flagEnd = true;
 		
 		contextGame.fillStyle = "red";
 		contextGame.font = "50px Arial";
